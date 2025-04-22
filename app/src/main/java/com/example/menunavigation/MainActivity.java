@@ -31,17 +31,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int itemId = item.getItemId();
-        if (itemId == R.id.action_menu1) {
-            Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show();
-            return true;
-        } else if (itemId == R.id.action_menu2) {
-            Toast.makeText(this, "Menu 2", Toast.LENGTH_SHORT).show();
-            return true;
-        } else if (itemId == R.id.action_menu3) {
-            Toast.makeText(this, "Menu 3", Toast.LENGTH_SHORT).show();
-            return true;
+        switch (item.getItemId()){
+            case R.id.action_menu1:
+                Toast.makeText(this, "MENU 1", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_menu2:
+                Toast.makeText(this, "MENU 2", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_menu3:
+                Toast.makeText(this, "MENU 3", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 }
